@@ -1,5 +1,5 @@
-import {charmander,juan} from './src/clases';
-
+//import {charmander,juan} from './src/clases';
+import {charmander, juan} from './src/clases';
 charmander.scream();
 charmander.speak();
 charmander.getMoves();
