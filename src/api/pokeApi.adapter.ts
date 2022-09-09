@@ -1,10 +1,21 @@
 import axios from "axios";
 
 
-export class PokeApiAdapter {
+export interface HttpAdapter {
+    get<T>(url:string):Promise<T>;
+}
+export class PokeApiFetchAdapter implements HttpAdapter {
+    async get<T>(url:string):Promise<T>{
+        const resp = await fetch(url);
+        const data:T = await resp.json();
+        return data;
+    }
+}
 
-    async get (url:string) {
-        const {data} = await axios.get(url);
+export class PokeApiAdapter implements HttpAdapter {
+
+    async get<T>(url:string) {
+        const {data} = await axios.get<T>(url);
         return data;
     }
 
