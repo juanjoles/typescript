@@ -5,7 +5,7 @@ const Deprecated = (deprecationReason: string) => {
         get() {
           const wrapperFn = (...args: any[]) => {
             console.warn(`Method ${ memberName } is deprecated with reason: ${ deprecationReason }`);
-            //! Llamar la función propiamente con sus argumentos.
+            // Llamar la función propiamente con sus argumentos.
             propertyDescriptor.value.apply(this, args); 
           }
           return wrapperFn;
