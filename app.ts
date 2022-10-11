@@ -8,5 +8,4 @@ charmander.scream();
 charmander.speak2();
 //charmander.getMoves();
 
-
 console.log(charmander)
